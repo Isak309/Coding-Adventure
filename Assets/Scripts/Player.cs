@@ -15,8 +15,8 @@ public class Player : MonoBehaviour
     bool facingRight = true;
 
     //check if character is touching ground
-    public bool grounded = false;
-
+    public bool isGrounded;
+    public LayerMask groundLayers;
     private void Awake()
     {
         rigidbody2d = transform.GetComponent<Rigidbody2D>();
@@ -24,7 +24,7 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetButtonDown("Jump"))
+        if(Input.GetButtonDown("Jump") && isGrounded)
         {
             rigidbody2d.velocity = Vector2.up * jumpVelocity;
         }
@@ -61,5 +61,15 @@ public class Player : MonoBehaviour
 
         //apply that to the local scale
         transform.localScale = theScale;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        isGrounded = true;
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        isGrounded = false;
     }
 }
