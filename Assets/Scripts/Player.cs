@@ -4,11 +4,31 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    //create characters rigidbody
+    private Rigidbody2D rigidbody2d;
+
     //speed of character
     public float topSpeed = 10f;
+    //jump velocity of character
+    public float jumpVelocity = 10f;
     //Which way the sprite is facing
     bool facingRight = true;
 
+    //check if character is touching ground
+    public bool grounded = false;
+
+    private void Awake()
+    {
+        rigidbody2d = transform.GetComponent<Rigidbody2D>();
+    }
+
+    private void Update()
+    {
+        if(Input.GetButtonDown("Jump"))
+        {
+            rigidbody2d.velocity = Vector2.up * jumpVelocity;
+        }
+    }
     private void FixedUpdate()
     {
         //get move direction
