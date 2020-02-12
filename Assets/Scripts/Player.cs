@@ -15,7 +15,7 @@ public class Player : MonoBehaviour
     bool facingRight = true;
 
     //check if character is touching ground
-    public bool isGrounded;
+    public bool isGrounded, canDoubleJump;
     public LayerMask groundLayers;
     private void Awake()
     {
@@ -24,11 +24,21 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetButtonDown("Jump") && isGrounded)
+        if (Input.GetButtonDown("Jump") && isGrounded)
         {
             rigidbody2d.velocity = Vector2.up * jumpVelocity;
+            canDoubleJump = true;
+        }
+        else
+        {
+            if(canDoubleJump && Input.GetButtonDown("Jump"))
+            {
+                rigidbody2d.velocity = Vector2.up * jumpVelocity;
+                canDoubleJump = false;
+            }
         }
     }
+
     private void FixedUpdate()
     {
         //get move direction
