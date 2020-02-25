@@ -425,12 +425,17 @@ RectTransform:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_AnchoredPosition: {x: 0, y: 69}
   m_SizeDelta: {x: 192.7, y: 28.2}
 =======
   m_AnchoredPosition: {x: 0, y: 155}
   m_SizeDelta: {x: 320, y: 60}
 >>>>>>> e4b9109d890d1227187236ad7642d20fb2c7b075
+=======
+  m_AnchoredPosition: {x: 0, y: 480}
+  m_SizeDelta: {x: 320, y: 60}
+>>>>>>> parent of e0c89ba... Played around with fonts and objective
 =======
   m_AnchoredPosition: {x: 0, y: 480}
   m_SizeDelta: {x: 320, y: 60}
@@ -462,6 +467,7 @@ MonoBehaviour:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_Font: {fileID: 12800000, guid: 8a7b9423c8ca4374c8bafb576017962d, type: 3}
     m_FontSize: 16
     m_FontStyle: 0
@@ -474,6 +480,13 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 2
 >>>>>>> e4b9109d890d1227187236ad7642d20fb2c7b075
+=======
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 40
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 3
+>>>>>>> parent of e0c89ba... Played around with fonts and objective
 =======
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 40
