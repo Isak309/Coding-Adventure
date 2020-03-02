@@ -23,9 +23,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Log_In.unity
     guid: fd4d514397f22594c8aa8825d971f063
-    path: Assets/Scenes/Log_In.unity
-    guid: fd4d514397f22594c8aa8825d971f063
   - enabled: 1
     path: Assets/Scenes/GUI.unity
     guid: 847dda66e4532c544b08b96f0b8b2902
+  - enabled: 1
+    path: Assets/Scenes/Sign Up Form.unity
+    guid: a1da9220ee47d47c6b4dbc4a78735894
+  - enabled: 1
+    path: Assets/Scenes/Log In Form.unity
+    guid: 9055d3fcc3ba649ec8ba04129ba2a716
   m_configObjects: {}
