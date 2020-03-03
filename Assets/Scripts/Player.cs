@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     public float topSpeed = 10f;
     //jump velocity of character
     public float jumpVelocity = 10f;
+    public float jumpVelocity2 = 9f;
     //Which way the sprite is facing
     bool facingRight = true;
 
@@ -33,7 +34,7 @@ public class Player : MonoBehaviour
         {
             if(canDoubleJump && Input.GetButtonDown("Jump"))
             {
-                rigidbody2d.velocity = Vector2.up * jumpVelocity;
+                rigidbody2d.velocity = Vector2.up * jumpVelocity2;
                 canDoubleJump = false;
             }
         }
