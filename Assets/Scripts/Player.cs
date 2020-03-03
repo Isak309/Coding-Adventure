@@ -24,7 +24,7 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetButtonDown("Jump") && isGrounded)
+        if (Input.GetButton("Jump") && isGrounded)
         {
             rigidbody2d.velocity = Vector2.up * jumpVelocity;
             canDoubleJump = true;

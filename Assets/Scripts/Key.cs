@@ -42,6 +42,8 @@ public class Key : MonoBehaviour
 
     private void PickUp()
     {
-        Destroy(gameObject);
+        //Destroy(gameObject);
+        Text QuestText = GameObject.Find("Canvas/Quest").GetComponent<Text>();
+        QuestText.text = "cout << \"Let's Get Started!\" ;";
     }
 }
