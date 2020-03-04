@@ -18,6 +18,9 @@ public class Key : MonoBehaviour
     {
         if(pickUpAllowed && Input.GetButtonDown("Interact"))
         {
+            //TODO: create condition to figure out if this is
+            //correct "key" (piece of code) or not.
+            //Call function depending on that
             PickUp();
         }
     }

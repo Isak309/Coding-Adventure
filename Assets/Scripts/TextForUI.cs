@@ -16,7 +16,7 @@ public class TextForUI : MonoBehaviour
         Text instructionsText = GameObject.Find("Canvas/Instructions").GetComponent<Text>();
         instructionsText.text = "Find the Correct Missing Code !";
 
-        //remove Instructions after 5 seconds
+        //remove Instructions after 3 seconds
         Destroy(GameObject.Find("Canvas/Instructions").GetComponent<Text>(), 3f);
     }
 
