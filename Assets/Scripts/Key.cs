@@ -16,7 +16,7 @@ public class Key : MonoBehaviour
 
     private void Update()
     {
-        if(pickUpAllowed && Input.GetButtonDown("Pickup"))
+        if(pickUpAllowed && Input.GetButtonDown("Interact"))
         {
             PickUp();
         }
@@ -27,6 +27,8 @@ public class Key : MonoBehaviour
         if(collision.gameObject.name.Equals("Player"))
         {
             pickUpText.gameObject.SetActive(true);
+
+            //value that becomes true when inside area
             pickUpAllowed = true;
         }
     }
@@ -36,14 +38,17 @@ public class Key : MonoBehaviour
         if (collision.gameObject.name.Equals("Player"))
         {
             pickUpText.gameObject.SetActive(false);
+
+            //becomes false now because its out of bounds
             pickUpAllowed = false;
         }
     }
 
     private void PickUp()
     {
-        //Destroy(gameObject);
         Text QuestText = GameObject.Find("Canvas/Quest").GetComponent<Text>();
         QuestText.text = "cout << \"Let's Get Started!\" ;";
     }
+
+
 }

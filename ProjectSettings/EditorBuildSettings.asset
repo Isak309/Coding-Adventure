@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Log In Form.unity
     guid: 9055d3fcc3ba649ec8ba04129ba2a716
+  - enabled: 1
+    path: Assets/Scenes/Play_1.unity
+    guid: ff3b8f9bdcfe5bc4192b4e5d91b44fda
   m_configObjects: {}
