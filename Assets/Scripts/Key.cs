@@ -8,7 +8,7 @@ public class Key : MonoBehaviour
     [SerializeField]
     private Text pickUpText;
     private bool pickUpAllowed;
-
+    public static bool correctKey = false;
     private void Start()
     {
         pickUpText.gameObject.SetActive(false);
@@ -51,6 +51,7 @@ public class Key : MonoBehaviour
     {
         Text QuestText = GameObject.Find("Canvas/Quest").GetComponent<Text>();
         QuestText.text = "cout << \"Let's Get Started!\" ;";
+        correctKey = true;
     }
 
 

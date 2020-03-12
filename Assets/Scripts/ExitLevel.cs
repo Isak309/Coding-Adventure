@@ -21,7 +21,8 @@ public class ExitLevel : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if (exitAllowed && Input.GetButtonDown("Interact"))
+        bool newKey = Key.correctKey;
+        if (exitAllowed && Input.GetButtonDown("Interact") && newKey == true)
         {
             SceneManager.LoadScene(LevelToLoad);
         }
