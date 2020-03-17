@@ -51,6 +51,6 @@ public class WrongKey : MonoBehaviour
     {
         Text QuestText = GameObject.Find("Canvas/Quest").GetComponent<Text>();
         QuestText.text = "print(\"Hello, World\")";
-        correctKey = true;
+        Key.correctKey = true;
     }
 }
