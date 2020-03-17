@@ -10,11 +10,12 @@ public class TextForUI : MonoBehaviour
     {
         //generate text for Quest
         Text QuestText = GameObject.Find("Canvas/Quest").GetComponent<Text>();
-        QuestText.text = "cout ____ \"Let's Get Started!\" ;";
+        QuestText.text = "~~~~(\"Hello, World\")";
 
         //generate text for instructions
         Text instructionsText = GameObject.Find("Canvas/Instructions").GetComponent<Text>();
-        instructionsText.text = "Find the Correct Missing Code !";
+        instructionsText.text = "Complete the python code " +
+            "\nunder the wavy lines!";
 
         //remove Instructions after 3 seconds
         Destroy(GameObject.Find("Canvas/Instructions").GetComponent<Text>(), 3f);

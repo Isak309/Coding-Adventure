@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Key : MonoBehaviour
+
+public class WrongKey : MonoBehaviour
 {
     [SerializeField]
     private Text pickUpText;
     private bool pickUpAllowed;
-    public static bool correctKey = false;
     private void Start()
     {
         pickUpText.gameObject.SetActive(false);
@@ -16,7 +16,7 @@ public class Key : MonoBehaviour
 
     private void Update()
     {
-        if(pickUpAllowed && Input.GetButtonDown("Interact"))
+        if (pickUpAllowed && Input.GetButtonDown("Interact"))
         {
             //TODO: create condition to figure out if this is
             //correct "key" (piece of code) or not.
@@ -27,7 +27,7 @@ public class Key : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.name.Equals("Player"))
+        if (collision.gameObject.name.Equals("Player"))
         {
             pickUpText.gameObject.SetActive(true);
 
@@ -53,6 +53,4 @@ public class Key : MonoBehaviour
         QuestText.text = "print(\"Hello, World\")";
         correctKey = true;
     }
-
-
 }
