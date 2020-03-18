@@ -381,7 +381,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 174376613}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3d02ea757d07d34195ba05ebd8813ce, type: 3}
+  m_Script: {fileID: 11500000, guid: 818ecaab8cbf2cd4eb7edd059c9f6731, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   pickUpText: {fileID: 329715821}
@@ -1441,7 +1441,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 5.773504, z: -50}
+  m_LocalPosition: {x: 0, y: 2.309401, z: -20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1240179412}
@@ -2333,7 +2333,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 737472093}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.67, y: 3.8747008, z: -10}
+  m_LocalPosition: {x: 7.61, y: 4.2047005, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2020289238}
@@ -3101,8 +3101,8 @@ GameObject:
   - component: {fileID: 1240179413}
   - component: {fileID: 1240179415}
   - component: {fileID: 1240179416}
-  - component: {fileID: 1240179414}
   - component: {fileID: 1240179417}
+  - component: {fileID: 1240179414}
   m_Layer: 9
   m_Name: Player
   m_TagString: Untagged
@@ -3118,8 +3118,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1240179411}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.67, y: 2.72, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_LocalPosition: {x: 7.61, y: 3.05, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 519420032}
   - {fileID: 1920673661}
@@ -3165,7 +3165,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e91dd037eed5801488f6b5b7bdc15a6e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5c57893abed69f04c9443270dac130d3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3176,8 +3176,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!60 &1240179414
-PolygonCollider2D:
+--- !u!61 &1240179414
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -3185,7 +3185,7 @@ PolygonCollider2D:
   m_GameObject: {fileID: 1240179411}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: abc5cffb44556384da227d50862d1531, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -3193,80 +3193,15 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 24.36, y: 11.252227}
+    oldSize: {x: 1.89, y: 4.43}
     newSize: {x: 38.0625, y: 17.581606}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: -0.4519922, y: -4.8886523}
-      - {x: -0.42820314, y: -4.948125}
-      - {x: 0.8326172, y: -4.948125}
-      - {x: 0.8564063, y: -4.924336}
-      - {x: 0.8683008, y: -4.8529687}
-      - {x: 0.8801953, y: -2.9022658}
-      - {x: 0.77314454, y: -2.6762695}
-      - {x: 0.8326172, y: -2.4740624}
-      - {x: 0.9872461, y: -2.28375}
-      - {x: 1.2608204, y: -2.28375}
-      - {x: 1.3440821, y: -2.236172}
-      - {x: 1.5819727, y: -1.9507031}
-      - {x: 3.17584, y: -1.0348243}
-      - {x: 3.2828908, y: -0.8801953}
-      - {x: 3.2828908, y: -0.6423047}
-      - {x: 2.9022658, y: 0}
-      - {x: 2.8071094, y: 0.09515625}
-      - {x: 2.7357423, y: 0.1546289}
-      - {x: 2.5216408, y: 0.1546289}
-      - {x: 1.6176562, y: -0.380625}
-      - {x: 1.4630274, y: -0.47578126}
-      - {x: 1.4630274, y: 0.78503907}
-      - {x: 1.320293, y: 0.96345705}
-      - {x: 1.2727149, y: 0.9753516}
-      - {x: 1.2727149, y: 4.139297}
-      - {x: 1.2608204, y: 4.2106643}
-      - {x: 1.2132422, y: 4.4009767}
-      - {x: 1.1537696, y: 4.519922}
-      - {x: 0.9277735, y: 4.805391}
-      - {x: 0.58283204, y: 4.948125}
-      - {x: -2.0220704, y: 4.948125}
-      - {x: -2.1529102, y: 4.924336}
-      - {x: -2.4026954, y: 4.817285}
-      - {x: -2.7000587, y: 4.4842386}
-      - {x: -2.7357423, y: 4.365293}
-      - {x: -2.795215, y: 4.0798244}
-      - {x: -2.997422, y: 3.199629}
-      - {x: -3.0568945, y: 3.17584}
-      - {x: -3.1163673, y: 3.1163673}
-      - {x: -3.1639454, y: 3.021211}
-      - {x: -3.1639454, y: 2.2956445}
-      - {x: -3.0568945, y: 2.129121}
-      - {x: -2.795215, y: 2.1172266}
-      - {x: -2.8784766, y: 0.9991406}
-      - {x: -2.9736328, y: 0.9991406}
-      - {x: -3.17584, y: 0.8207227}
-      - {x: -3.17584, y: -1.2489258}
-      - {x: -3.2353125, y: -1.320293}
-      - {x: -3.2828908, y: -1.4273438}
-      - {x: -3.2828908, y: -1.6057618}
-      - {x: -3.17584, y: -1.7960743}
-      - {x: -3.1877344, y: -2.057754}
-      - {x: -2.997422, y: -2.2956445}
-      - {x: -2.7119532, y: -2.41459}
-      - {x: -2.5216408, y: -2.41459}
-      - {x: -2.3194337, y: -2.2956445}
-      - {x: -2.259961, y: -2.5216408}
-      - {x: -2.390801, y: -2.6286914}
-      - {x: -2.5216408, y: -2.8546877}
-      - {x: -2.5216408, y: -4.8648634}
-      - {x: -2.509746, y: -4.924336}
-      - {x: -2.4859571, y: -4.948125}
-      - {x: -1.2251368, y: -4.948125}
-      - {x: -1.1894531, y: -4.900547}
-      - {x: -1.1775587, y: -3.3066797}
-      - {x: -0.4519922, y: -3.3066797}
+  serializedVersion: 2
+  m_Size: {x: 1.89, y: 4.43}
+  m_EdgeRadius: 0
 --- !u!50 &1240179415
 Rigidbody2D:
   serializedVersion: 4
@@ -3321,18 +3256,18 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.7333298, y: 0}
+  m_Offset: {x: -0.22786677, y: 0.13741255}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 24.36, y: 11.252227}
+    oldSize: {x: 1.89, y: 4.43}
     newSize: {x: 38.0625, y: 17.581606}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 12.333139, y: 11.252227}
+  m_Size: {x: 3.680546, y: 5.4808693}
   m_EdgeRadius: 0
 --- !u!4 &1339307261 stripped
 Transform:
