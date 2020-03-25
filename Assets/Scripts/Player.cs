@@ -6,14 +6,16 @@ public class Player : MonoBehaviour
 {
     //create characters rigidbody
     private Rigidbody2D rigidbody2d;
-
+    private float move;
     //speed of character
-    public float topSpeed = 10f;
+    public float topSpeed;
     //jump velocity of character
-    public float jumpVelocity = 10f;
-    public float jumpVelocity2 = 9f;
+    public float jumpVelocity;
+    public float jumpVelocity2;
     //Which way the sprite is facing
     bool facingRight = true;
+
+    public Joystick joystick;
 
     //check if character is touching ground
     public bool isGrounded, canDoubleJump;
@@ -43,7 +45,8 @@ public class Player : MonoBehaviour
     private void FixedUpdate()
     {
         //get move direction
-        float move = Input.GetAxis("Horizontal");
+        //float move = Input.GetAxis("Horizontal");
+        move = joystick.Horizontal * topSpeed;
 
         //add velocity to the rigidbody in the move direction * our speed
         GetComponent<Rigidbody2D>().velocity = new Vector2(move * topSpeed, GetComponent<Rigidbody2D>().velocity.y);
