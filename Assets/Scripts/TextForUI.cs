@@ -20,10 +20,4 @@ public class TextForUI : MonoBehaviour
         //remove Instructions after 3 seconds
         Destroy(GameObject.Find("Canvas/Instructions").GetComponent<Text>(), 3f);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

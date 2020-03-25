@@ -27,12 +27,19 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetButton("Jump") && isGrounded)
+        //get move direction
+        move = joystick.Horizontal * topSpeed;
+
+        float verticalMove = joystick.Vertical;
+        //add velocity to the rigidbody in the move direction * our speed
+        GetComponent<Rigidbody2D>().velocity = new Vector2(move * topSpeed, GetComponent<Rigidbody2D>().velocity.y);
+
+        if (verticalMove >= 0.5 && isGrounded)
         {
             rigidbody2d.velocity = Vector2.up * jumpVelocity;
             canDoubleJump = true;
         }
-        else
+        else //not using this right now
         {
             if(canDoubleJump && Input.GetButtonDown("Jump"))
             {
@@ -40,23 +47,13 @@ public class Player : MonoBehaviour
                 canDoubleJump = false;
             }
         }
-    }
-
-    private void FixedUpdate()
-    {
-        //get move direction
-        //float move = Input.GetAxis("Horizontal");
-        move = joystick.Horizontal * topSpeed;
-
-        //add velocity to the rigidbody in the move direction * our speed
-        GetComponent<Rigidbody2D>().velocity = new Vector2(move * topSpeed, GetComponent<Rigidbody2D>().velocity.y);
 
         //if we're facing negative direcetion and not facing right, flip
-        if(move > 0 && !facingRight)
+        if (move > 0 && !facingRight)
         {
             Flip();
         }
-        else if(move < 0 && facingRight)
+        else if (move < 0 && facingRight)
         {
             Flip();
         }
