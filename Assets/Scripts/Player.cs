@@ -27,13 +27,24 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
+        int nbTouches = Input.touchCount;
+
+        if (nbTouches > 0)
+        {
+            print(nbTouches + " touch(es) detected");
+
+            for (int i = 0; i < nbTouches; i++)
+            {
+                Touch touch = Input.GetTouch(i);
+
+                print("Touch index " + touch.fingerId + " detected at position " + touch.position);
+            }
+        }
         //get move direction
         move = joystick.Horizontal * topSpeed;
-
         float verticalMove = joystick.Vertical;
         //add velocity to the rigidbody in the move direction * our speed
         GetComponent<Rigidbody2D>().velocity = new Vector2(move * topSpeed, GetComponent<Rigidbody2D>().velocity.y);
-
         if (verticalMove >= 0.5 && isGrounded)
         {
             rigidbody2d.velocity = Vector2.up * jumpVelocity;
@@ -47,7 +58,6 @@ public class Player : MonoBehaviour
                 canDoubleJump = false;
             }
         }
-
         //if we're facing negative direcetion and not facing right, flip
         if (move > 0 && !facingRight)
         {
@@ -57,6 +67,7 @@ public class Player : MonoBehaviour
         {
             Flip();
         }
+
     }
 
     void Flip()
