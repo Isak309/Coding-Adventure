@@ -3709,13 +3709,12 @@ GameObject:
   - component: {fileID: 1240179412}
   - component: {fileID: 1240179413}
   - component: {fileID: 1240179415}
+  - component: {fileID: 1240179414}
   - component: {fileID: 1240179416}
   - component: {fileID: 1240179417}
-  - component: {fileID: 1240179414}
-  - component: {fileID: 1240179418}
   m_Layer: 9
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3794,7 +3793,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1240179411}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: abc5cffb44556384da227d50862d1531, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -3853,33 +3852,7 @@ MonoBehaviour:
   groundLayers:
     serializedVersion: 2
     m_Bits: 256
---- !u!61 &1240179417
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1240179411}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 6200000, guid: abc5cffb44556384da227d50862d1531, type: 2}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.0091872215, y: 0.08274174}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.89, y: 4.43}
-    newSize: {x: 38.0625, y: 17.581606}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 2.222684, y: 3.7678804}
-  m_EdgeRadius: 0
---- !u!114 &1240179418
+--- !u!114 &1240179417
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3888,7 +3861,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1240179411}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f4332af8a905a84caf5732f490bb771, type: 3}
+  m_Script: {fileID: 11500000, guid: 152533c9901fd18418359f73d00d6311, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1269534859
@@ -3906,10 +3879,9 @@ GameObject:
   - component: {fileID: 1269534860}
   - component: {fileID: 1269534866}
   - component: {fileID: 1269534865}
-  - component: {fileID: 1269534867}
   m_Layer: 0
   m_Name: IncorrectAnswer1
-  m_TagString: Untagged
+  m_TagString: IncorrectText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4108,10 +4080,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1269534859}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 818ecaab8cbf2cd4eb7edd059c9f6731, type: 3}
+  m_Script: {fileID: 11500000, guid: 152533c9901fd18418359f73d00d6311, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickUpText: {fileID: 329715821}
 --- !u!61 &1269534866
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4138,18 +4109,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7.6434727, y: 2.8357592}
   m_EdgeRadius: 0
---- !u!114 &1269534867
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1269534859}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f4332af8a905a84caf5732f490bb771, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1332421318 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6097120420843028446, guid: caef1590e5c844c478d47ae0fbbed06c,
@@ -5796,7 +5755,7 @@ GameObject:
   - component: {fileID: 1864656662}
   m_Layer: 0
   m_Name: CorrectAnswer1
-  m_TagString: Untagged
+  m_TagString: CorrectText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5810,10 +5769,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1864656661}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3d02ea757d07d34195ba05ebd8813ce, type: 3}
+  m_Script: {fileID: 11500000, guid: 152533c9901fd18418359f73d00d6311, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickUpText: {fileID: 329715821}
 --- !u!61 &1864656663
 BoxCollider2D:
   m_ObjectHideFlags: 0
