@@ -26,12 +26,13 @@ public class OnTouch : MonoBehaviour
         //Check incorrect
         foreach (Touch touch in Input.touches)
         {
-            if (touch.position.x < Screen.width / 2)
+            if (touch.position.x < Screen.width / 3 && touch.position.y < Screen.height / 2.2)
             {
                 Debug.Log("Touch");
             }
             else
             {
+                Debug.Log("Other Touch");
                 Vector2 test = Camera.main.ScreenToWorldPoint(touch.position);
                 RaycastHit2D hit = Physics2D.Raycast(test, (touch.position));
                 if (hit.collider && hit.collider.tag == "CorrectText")
