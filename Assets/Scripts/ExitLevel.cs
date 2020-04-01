@@ -21,9 +21,19 @@ public class ExitLevel : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if (exitAllowed && Input.GetButtonDown("Interact") && OnTouch.correctKey == true)
+        if (exitAllowed && OnTouch.correctKey == true)
         {
-            SceneManager.LoadScene(LevelToLoad);
+            foreach (Touch touch in Input.touches)
+            {
+                if (touch.position.x < Screen.width / 3 && touch.position.y < Screen.height / 2.1)
+                {
+                    Debug.Log("Touched Joystick");
+                }
+                else
+                {
+                    SceneManager.LoadScene(LevelToLoad);
+                }
+            }
         }
     }
 
