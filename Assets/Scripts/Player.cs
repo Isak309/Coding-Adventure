@@ -19,10 +19,6 @@ public class Player : MonoBehaviour
 
     //check if character is touching ground
     public bool canDoubleJump;
-
-    //Pause GameObject
-    public GameObject pauseMenu;
-
     private void Awake()
     {
         rigidbody2d = transform.GetComponent<Rigidbody2D>();

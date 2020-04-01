@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class MenuController : MonoBehaviour
 {
     public static string sceneName;
-    public static GameObject pauseMenu;
+    public GameObject pauseMenu;
     public static bool isPaused;
 
     // Update is called once per frame
@@ -27,14 +27,14 @@ public class MenuController : MonoBehaviour
         }
     }
 
-    public static void ResumeGame()
+    public void ResumeGame()
     {
         isPaused = false;
-        pauseMenu.SetActive(false);
+        //pauseMenu.SetActive(false);
         Time.timeScale = 1f;
     }
 
-    public static void ReturnToMain()
+    public void ReturnToMain()
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene(sceneName);
