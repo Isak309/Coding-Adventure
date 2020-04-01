@@ -6,6 +6,7 @@ TagManager:
   tags:
   - CorrectText
   - IncorrectText
+  - Floor
   layers:
   - Default
   - TransparentFX
