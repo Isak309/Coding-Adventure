@@ -6,6 +6,10 @@ TagManager:
   tags:
   - CorrectText
   - IncorrectText
+  - Floor
+  - Pause
+  - Resume
+  - MainMenu
   layers:
   - Default
   - TransparentFX

@@ -18,8 +18,7 @@ public class Player : MonoBehaviour
     public Joystick joystick;
 
     //check if character is touching ground
-    public bool isGrounded, canDoubleJump;
-    public LayerMask groundLayers;
+    public bool canDoubleJump;
     private void Awake()
     {
         rigidbody2d = transform.GetComponent<Rigidbody2D>();
@@ -63,17 +62,6 @@ public class Player : MonoBehaviour
         //apply that to the local scale
         transform.localScale = theScale;
     }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        isGrounded = true;
-    }
-
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        isGrounded = false;
-    }
-
     public void Move()
     {
         //get move direction
@@ -81,7 +69,7 @@ public class Player : MonoBehaviour
         float verticalMove = joystick.Vertical;
         //add velocity to the rigidbody in the move direction * our speed
         GetComponent<Rigidbody2D>().velocity = new Vector2(move * topSpeed, GetComponent<Rigidbody2D>().velocity.y);
-        if (verticalMove >= 0.5 && isGrounded)
+        if (verticalMove >= 0.5 && Grounded.grounded)
         {
             rigidbody2d.velocity = Vector2.up * jumpVelocity;
             canDoubleJump = true;
