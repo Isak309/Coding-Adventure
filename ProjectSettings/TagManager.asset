@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - CorrectText
+  - IncorrectText
+  - Floor
+  - Pause
+  - Resume
+  - MainMenu
   layers:
   - Default
   - TransparentFX

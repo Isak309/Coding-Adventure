@@ -15,15 +15,9 @@ public class TextForUI : MonoBehaviour
         //generate text for instructions
         Text instructionsText = GameObject.Find("Canvas/Instructions").GetComponent<Text>();
         instructionsText.text = "Complete the python code " +
-            "\nunder the wavy lines!";
+            "\nin place of the wavy lines!";
 
         //remove Instructions after 3 seconds
         Destroy(GameObject.Find("Canvas/Instructions").GetComponent<Text>(), 3f);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

@@ -18,8 +18,7 @@ public class Player : MonoBehaviour
     public Joystick joystick;
 
     //check if character is touching ground
-    public bool isGrounded, canDoubleJump;
-    public LayerMask groundLayers;
+    public bool canDoubleJump;
     private void Awake()
     {
         rigidbody2d = transform.GetComponent<Rigidbody2D>();
@@ -27,36 +26,26 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetButton("Jump") && isGrounded)
+        InteractWithText();
+        Move();
+
+
+        int nbTouches = Input.touchCount;
+        if (nbTouches > 0)
         {
-            rigidbody2d.velocity = Vector2.up * jumpVelocity;
-            canDoubleJump = true;
-        }
-        else
-        {
-            if(canDoubleJump && Input.GetButtonDown("Jump"))
+            print(nbTouches + " touch(es) detected");
+            for (int i = 0; i < nbTouches; i++)
             {
-                rigidbody2d.velocity = Vector2.up * jumpVelocity2;
-                canDoubleJump = false;
+                Touch touch = Input.GetTouch(i);
+                print("Touch index " + touch.fingerId + " detected at position " + touch.position);
             }
         }
-    }
-
-    private void FixedUpdate()
-    {
-        //get move direction
-        //float move = Input.GetAxis("Horizontal");
-        move = joystick.Horizontal * topSpeed;
-
-        //add velocity to the rigidbody in the move direction * our speed
-        GetComponent<Rigidbody2D>().velocity = new Vector2(move * topSpeed, GetComponent<Rigidbody2D>().velocity.y);
-
         //if we're facing negative direcetion and not facing right, flip
-        if(move > 0 && !facingRight)
+        if (move > 0 && !facingRight)
         {
             Flip();
         }
-        else if(move < 0 && facingRight)
+        else if (move < 0 && facingRight)
         {
             Flip();
         }
@@ -66,24 +55,56 @@ public class Player : MonoBehaviour
     {
         //saying we are facing opposite direction
         facingRight = !facingRight;
-
         //get the local scale
         Vector3 theScale = transform.localScale;
-
         //flip on x axis
         theScale.x *= -1;
-
         //apply that to the local scale
         transform.localScale = theScale;
     }
-
-    private void OnCollisionEnter2D(Collision2D collision)
+    public void Move()
     {
-        isGrounded = true;
+        //get move direction
+        move = joystick.Horizontal * topSpeed;
+        float verticalMove = joystick.Vertical;
+        //add velocity to the rigidbody in the move direction * our speed
+        GetComponent<Rigidbody2D>().velocity = new Vector2(move * topSpeed, GetComponent<Rigidbody2D>().velocity.y);
+        if (verticalMove >= 0.5 && Grounded.grounded)
+        {
+            rigidbody2d.velocity = Vector2.up * jumpVelocity;
+            canDoubleJump = true;
+        }
+        else //not using this right now
+        {
+            if (canDoubleJump && Input.GetButtonDown("Jump"))
+            {
+                rigidbody2d.velocity = Vector2.up * jumpVelocity2;
+                canDoubleJump = false;
+            }
+        }
     }
 
-    private void OnCollisionExit2D(Collision2D collision)
+    public void InteractWithText()
     {
-        isGrounded = false;
+        if ((Input.touchCount > 0) && (Input.GetTouch(0).phase == TouchPhase.Began))
+        {
+            Ray raycast = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
+            RaycastHit raycastHit;
+            if (Physics.Raycast(raycast, out raycastHit))
+            {
+                Debug.Log("Something Hit");
+                if (raycastHit.collider.name == "Soccer")
+                {
+                    Debug.Log("Soccer Ball clicked");
+                }
+
+                //OR with Tag
+
+                if (raycastHit.collider.CompareTag("SoccerTag"))
+                {
+                    Debug.Log("Soccer Ball clicked");
+                }
+            }
+        }
     }
 }
