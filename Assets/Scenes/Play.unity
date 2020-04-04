@@ -1364,7 +1364,6 @@ MonoBehaviour:
   jumpVelocity2: 9
   joystick: {fileID: 964681109}
   canDoubleJump: 0
-  pauseMenu: {fileID: 0}
 --- !u!114 &1240179417
 MonoBehaviour:
   m_ObjectHideFlags: 0
