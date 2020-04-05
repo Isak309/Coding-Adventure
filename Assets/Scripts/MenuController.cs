@@ -2,28 +2,57 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class MenuController : MonoBehaviour
 {
     public static string sceneName;
     public GameObject pauseMenu;
+    public Canvas pauseButton;
     public static bool isPaused;
 
+
+    private void Start()
+    {
+        GameObject pauseTemp = GameObject.Find("Pause");
+        if(pauseTemp != null)
+        {
+            pauseButton = pauseTemp.GetComponent<Canvas>();
+            if (pauseButton == null)
+            {
+                Debug.Log("Could not locate Canvas component on " + pauseTemp.name);
+            }
+        }
+
+    }
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        foreach (Touch touch in Input.touches)
         {
-            if (isPaused)
+            Vector2 test = Camera.main.ScreenToWorldPoint(touch.position);
+            RaycastHit2D hit = Physics2D.Raycast(test, (touch.position));
+            if(hit)
             {
-                ResumeGame();
+                Debug.Log(hit.transform.name);
+                if (hit.transform.name == "Pause")//!pauseMenu.activeInHierarchy)
+                {
+                    pauseMenu.SetActive(true);
+                    isPaused = true;
+                    Time.timeScale = 0f;
+                }
             }
-            else
-            {
-                isPaused = true;
-                pauseMenu.SetActive(true);
-                Time.timeScale = 0f;
-            }
+        }
+    }
+    public void OnMouseDown()
+    {
+
+        if (!pauseMenu.activeInHierarchy)
+        {
+            pauseMenu.SetActive(true);
+            isPaused = true;
+            Time.timeScale = 0f;
         }
     }
 

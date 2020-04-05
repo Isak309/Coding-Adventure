@@ -26,9 +26,7 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        InteractWithText();
         Move();
-
 
         int nbTouches = Input.touchCount;
         if (nbTouches > 0)
@@ -89,30 +87,6 @@ public class Player : MonoBehaviour
             {
                 rigidbody2d.velocity = Vector2.up * jumpVelocity2;
                 canDoubleJump = false;
-            }
-        }
-    }
-
-    public void InteractWithText()
-    {
-        if ((Input.touchCount > 0) && (Input.GetTouch(0).phase == TouchPhase.Began))
-        {
-            Ray raycast = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
-            RaycastHit raycastHit;
-            if (Physics.Raycast(raycast, out raycastHit))
-            {
-                Debug.Log("Something Hit");
-                if (raycastHit.collider.name == "Soccer")
-                {
-                    Debug.Log("Soccer Ball clicked");
-                }
-
-                //OR with Tag
-
-                if (raycastHit.collider.CompareTag("SoccerTag"))
-                {
-                    Debug.Log("Soccer Ball clicked");
-                }
             }
         }
     }
