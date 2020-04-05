@@ -16,7 +16,7 @@ public class OnTouch : MonoBehaviour
 
     public string sceneName;
     public bool isPaused;
-
+    public bool useless;
 
     // Start is called before the first frame update
     void Start()
@@ -39,33 +39,30 @@ public class OnTouch : MonoBehaviour
             RaycastHit2D hit = Physics2D.Raycast(test, (touch.position));
             if (touch.position.x < Screen.width / 3 && touch.position.y < Screen.height / 2.1)
             {
-                Debug.Log("Touched Joystick");
+                useless = true;
             }
             else
             {
-                Debug.Log("Touched Elsewhere");
-                
+                useless = false;
                 if (hit.collider && hit.collider.tag == "CorrectText")
                 {
-                    Debug.Log("CorrectText");
                     Text QuestText = GameObject.Find("Canvas/Quest").GetComponent<Text>();
                     QuestText.text = "print(\"Hello, World\")";
                     correctKey = true;
                 }
                 else if (hit.collider && hit.collider.tag == "IncorrectText")
                 {
-                    Debug.Log("IncorrectText");
                     Text QuestText = GameObject.Find("Canvas/Quest").GetComponent<Text>();
                     QuestText.text = "Print(\"Hello, World\")";
                     correctKey = false;
                 }
             }
-            if (hit.collider && hit.collider.tag == "Pause")
+            /*if (hit.collider && hit.collider.tag == "Pause")
             {
                 MenuController.isPaused = true;
                 pauseMenu.SetActive(true);
                 Time.timeScale = 0f;
-            }
+            }*/
             /*if (hit.collider && hit.collider.tag == "Resume")
             {
                 MenuController.isPaused = false;
@@ -79,18 +76,5 @@ public class OnTouch : MonoBehaviour
                 Time.timeScale = 0f;
             }*/
         }
-    }
-
-    public void ResumeGame()
-    {
-        isPaused = false;
-        pauseMenu.SetActive(false);
-        Time.timeScale = 1f;
-    }
-
-    public void ReturnToMain()
-    {
-        Time.timeScale = 1f;
-        SceneManager.LoadScene(sceneName);
     }
 }

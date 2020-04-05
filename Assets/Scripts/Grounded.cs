@@ -13,8 +13,8 @@ public class Grounded : MonoBehaviour
 
     void Raycasting()
     {
-        Debug.DrawLine(rayStart.position, rayEnd.position, Color.green);
+        //Debug.DrawLine(rayStart.position, rayEnd.position, Color.green);
         grounded = Physics2D.Linecast(rayStart.position, rayEnd.position, 1 << LayerMask.NameToLayer("Floor"));
-        Debug.Log(grounded);
+        //Debug.Log(grounded);
     }
 }

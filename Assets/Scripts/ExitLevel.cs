@@ -23,15 +23,18 @@ public class ExitLevel : MonoBehaviour
     {
         if (exitAllowed && OnTouch.correctKey == true)
         {
+
             foreach (Touch touch in Input.touches)
             {
-                if (touch.position.x < Screen.width / 3 && touch.position.y < Screen.height / 2.1)
+                Vector2 test = Camera.main.ScreenToWorldPoint(touch.position);
+                RaycastHit2D hit = Physics2D.Raycast(test, (touch.position));
+                if (touch.position.x < Screen.width && touch.position.y < Screen.height)
                 {
-                    Debug.Log("Touched Joystick");
-                }
-                else
-                {
-                    SceneManager.LoadScene(LevelToLoad);
+                    if (hit.collider && hit.collider.tag == "Exit")
+                    {
+                        SceneManager.LoadScene(LevelToLoad);
+
+                    }
                 }
             }
         }

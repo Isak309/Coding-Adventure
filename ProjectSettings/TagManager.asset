@@ -10,6 +10,7 @@ TagManager:
   - Pause
   - Resume
   - MainMenu
+  - Exit
   layers:
   - Default
   - TransparentFX
@@ -21,9 +22,9 @@ TagManager:
   - 
   - Floor
   - Player
-  - 
-  - 
-  - 
+  - Exit
+  - CorrectText
+  - IncorrectText
   - 
   - 
   - 
