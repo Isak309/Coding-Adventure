@@ -69,6 +69,15 @@ public class Player : MonoBehaviour
         float verticalMove = joystick.Vertical;
         //add velocity to the rigidbody in the move direction * our speed
         GetComponent<Rigidbody2D>().velocity = new Vector2(move * topSpeed, GetComponent<Rigidbody2D>().velocity.y);
+        if (move == 0)
+        {
+            bool idleStance = true;
+        }
+        else
+        {
+            bool idleStance = false;
+        }
+
         if (verticalMove >= 0.5 && Grounded.grounded)
         {
             rigidbody2d.velocity = Vector2.up * jumpVelocity;
