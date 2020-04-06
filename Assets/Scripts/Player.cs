@@ -14,6 +14,8 @@ public class Player : MonoBehaviour
     public float jumpVelocity2;
     //Which way the sprite is facing
     bool facingRight = true;
+    //animator
+    public Animator my_Animator;
 
     public Joystick joystick;
 
@@ -22,6 +24,12 @@ public class Player : MonoBehaviour
     private void Awake()
     {
         rigidbody2d = transform.GetComponent<Rigidbody2D>();
+    }
+
+    public void Start()
+    {
+        my_Animator = gameObject.GetComponent<Animator>();
+
     }
 
     private void Update()
@@ -67,13 +75,13 @@ public class Player : MonoBehaviour
         float verticalMove = joystick.Vertical;
         //add velocity to the rigidbody in the move direction * our speed
         GetComponent<Rigidbody2D>().velocity = new Vector2(move * topSpeed, GetComponent<Rigidbody2D>().velocity.y);
-        if (move == 0)
+        if (move > 0.1 || move < -0.1)
         {
-            bool idleStance = true;
+
+           my_Animator.SetBool("movement", true);
         }
         else
         {
-            bool idleStance = false;
         }
 
         if (verticalMove >= 0.5 && Grounded.grounded)
