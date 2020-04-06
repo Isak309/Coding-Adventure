@@ -78,7 +78,7 @@ public class Player : MonoBehaviour
         if (move > 0.1 || move < -0.1)
         {
 
-           my_Animator.SetBool("movement", true);
+           //my_Animator.SetBool("movement", true);
         }
         else
         {

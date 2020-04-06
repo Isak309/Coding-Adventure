@@ -1399,7 +1399,6 @@ GameObject:
   - component: {fileID: 1240179417}
   - component: {fileID: 1240179418}
   - component: {fileID: 1240179419}
-  - component: {fileID: 1240179420}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -1537,6 +1536,7 @@ MonoBehaviour:
   topSpeed: 4
   jumpVelocity: 15
   jumpVelocity2: 9
+  my_Animator: {fileID: 0}
   joystick: {fileID: 964681109}
   canDoubleJump: 0
 --- !u!114 &1240179417
@@ -1584,25 +1584,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: 60
---- !u!95 &1240179420
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1240179411}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 445ec6dfcbc42bd46ae14a023108f7b0, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1269534859
 GameObject:
   m_ObjectHideFlags: 0

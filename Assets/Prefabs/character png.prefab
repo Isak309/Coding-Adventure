@@ -168,7 +168,7 @@ Animator:
   m_GameObject: {fileID: 728418297433203070}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 636416bf7c05e70429d7451ffd57d2c5, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -814,7 +814,7 @@ Animator:
   m_GameObject: {fileID: 728418298738371042}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ce0b239e369e71e4fb68a56520228740, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -885,6 +885,7 @@ MonoBehaviour:
   topSpeed: 4
   jumpVelocity: 5
   jumpVelocity2: 5
+  my_Animator: {fileID: 0}
   joystick: {fileID: 0}
   canDoubleJump: 0
 --- !u!114 &728418298738371069
