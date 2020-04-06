@@ -7,7 +7,7 @@ using UnityEngine.EventSystems;
 
 public class MenuController : MonoBehaviour
 {
-    public static string sceneName;
+    public string sceneName;
     public GameObject pauseMenu;
     public Canvas pauseButton;
     public static bool isPaused;
@@ -15,32 +15,38 @@ public class MenuController : MonoBehaviour
 
     private void Start()
     {
-        GameObject pauseTemp = GameObject.Find("Pause");
-        if(pauseTemp != null)
-        {
-            pauseButton = pauseTemp.GetComponent<Canvas>();
-            if (pauseButton == null)
-            {
-                Debug.Log("Could not locate Canvas component on " + pauseTemp.name);
-            }
-        }
 
     }
     // Update is called once per frame
     void Update()
     {
+        PauseCondition();
+    }
+
+    private void PauseCondition()
+    {
         foreach (Touch touch in Input.touches)
         {
-            Vector2 test = Camera.main.ScreenToWorldPoint(touch.position);
-            RaycastHit2D hit = Physics2D.Raycast(test, (touch.position));
-            if(hit)
+            if (touch.position.x < 200 && touch.position.y > 500)
             {
-                Debug.Log(hit.transform.name);
-                if (hit.transform.name == "Pause")//!pauseMenu.activeInHierarchy)
+                Vector2 test = Camera.main.ScreenToWorldPoint(touch.position);
+                RaycastHit2D hit = Physics2D.Raycast(test, (touch.position));
+                if (hit)
                 {
-                    pauseMenu.SetActive(true);
-                    isPaused = true;
-                    Time.timeScale = 0f;
+                    Debug.Log(hit.transform.name);
+                    if (hit.transform.name == "Pause" && !pauseMenu.activeInHierarchy)
+                    {
+                        pauseMenu.SetActive(true);
+                        isPaused = true;
+                        Time.timeScale = 0f;
+                    }
+                    //Unpause using same pause button. Unpauses too quick though
+                    /*else if (hit.transform.name == "Pause" && pauseMenu.activeInHierarchy)
+                    {
+                        pauseMenu.SetActive(false);
+                        isPaused = false;
+                        Time.timeScale = 1f;
+                    }*/
                 }
             }
         }
@@ -54,12 +60,18 @@ public class MenuController : MonoBehaviour
             isPaused = true;
             Time.timeScale = 0f;
         }
+        if (pauseMenu.activeInHierarchy)
+        {
+            pauseMenu.SetActive(false);
+            isPaused = false;
+            Time.timeScale = 1f;
+        }
     }
 
     public void ResumeGame()
     {
         isPaused = false;
-        //pauseMenu.SetActive(false);
+        pauseMenu.SetActive(false);
         Time.timeScale = 1f;
     }
 
