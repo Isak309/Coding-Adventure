@@ -12,10 +12,9 @@ public class Player : MonoBehaviour
     //jump velocity of character
     public float jumpVelocity;
     public float jumpVelocity2;
+    public float fallMultiplyers;
     //Which way the sprite is facing
     bool facingRight = true;
-    //animator
-    public Animator my_Animator;
 
     public Joystick joystick;
 
@@ -28,7 +27,6 @@ public class Player : MonoBehaviour
 
     public void Start()
     {
-        my_Animator = gameObject.GetComponent<Animator>();
 
     }
 
@@ -93,9 +91,14 @@ public class Player : MonoBehaviour
         {
             if (canDoubleJump && Input.GetButtonDown("Jump"))
             {
-                rigidbody2d.velocity = Vector2.up * jumpVelocity2;
+                rigidbody2d.velocity = Vector2.up * jumpVelocity2 * Time.deltaTime;
                 canDoubleJump = false;
             }
+        }
+        if(rigidbody2d.velocity.y < 0)
+        {
+            rigidbody2d.velocity += Vector2.up * Physics2D.gravity.y * fallMultiplyers * Time.deltaTime;
+            Debug.Log("Less");
         }
     }
 }
