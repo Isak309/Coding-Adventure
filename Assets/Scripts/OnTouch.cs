@@ -8,6 +8,7 @@ public class OnTouch : MonoBehaviour
 {
     private Text pickUpText;
     public static bool correctKey = false;
+    public static bool incorrectKey = false;
 
     //Pause GameObject
     public GameObject pauseMenu;
@@ -49,12 +50,14 @@ public class OnTouch : MonoBehaviour
                     Text QuestText = GameObject.Find("Canvas/Quest").GetComponent<Text>();
                     QuestText.text = "print(\"Hello, World\")";
                     correctKey = true;
+                    incorrectKey = false;
                 }
                 else if (hit.collider && hit.collider.tag == "IncorrectText")
                 {
                     Text QuestText = GameObject.Find("Canvas/Quest").GetComponent<Text>();
                     QuestText.text = "Print(\"Hello, World\")";
                     correctKey = false;
+                    incorrectKey = true;
                 }
             }
             /*if (hit.collider && hit.collider.tag == "Pause")

@@ -8,6 +8,7 @@ public class ExitLevel : MonoBehaviour
 {
     [SerializeField]
     private Text exitText;
+    private Text incorrectText;
     private bool exitAllowed;
 
     public string LevelToLoad;
@@ -34,6 +35,22 @@ public class ExitLevel : MonoBehaviour
                     {
                         SceneManager.LoadScene(LevelToLoad);
 
+                    }
+                }
+            }
+        }
+        else if (exitAllowed && OnTouch.incorrectKey == true)
+        {
+
+            foreach (Touch touch in Input.touches)
+            {
+                Vector2 test = Camera.main.ScreenToWorldPoint(touch.position);
+                RaycastHit2D hit = Physics2D.Raycast(test, (touch.position));
+                if (touch.position.x < Screen.width && touch.position.y < Screen.height)
+                {
+                    if (hit.collider && hit.collider.tag == "Exit")
+                    {
+                        incorrectText.gameObject.SetActive(true);
                     }
                 }
             }
