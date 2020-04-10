@@ -10,7 +10,6 @@ public class ExitLevel : MonoBehaviour
     private Text exitText;
     private Text incorrectText;
     private bool exitAllowed;
-
     public string LevelToLoad;
 
     // Start is called before the first frame update
