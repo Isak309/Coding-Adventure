@@ -1866,6 +1866,7 @@ MonoBehaviour:
   jumpVelocity: 15
   jumpVelocity2: 9
   fallMultiplyers: 4
+  animator: {fileID: 1240179420}
   joystick: {fileID: 964681109}
   canDoubleJump: 0
 --- !u!114 &1240179417

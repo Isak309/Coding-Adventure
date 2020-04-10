@@ -16,6 +16,9 @@ public class Player : MonoBehaviour
     //Which way the sprite is facing
     bool facingRight = true;
 
+    //animator
+    public Animator animator;
+
     public Joystick joystick;
 
     //check if character is touching ground
@@ -33,6 +36,7 @@ public class Player : MonoBehaviour
     private void Update()
     {
         Move();
+        animator.SetFloat("New Float", Mathf.Abs(move));
 
         int nbTouches = Input.touchCount;
         if (nbTouches > 0)
@@ -98,7 +102,6 @@ public class Player : MonoBehaviour
         if(rigidbody2d.velocity.y < 0)
         {
             rigidbody2d.velocity += Vector2.up * Physics2D.gravity.y * fallMultiplyers * Time.deltaTime;
-            Debug.Log("Less");
         }
     }
 }
