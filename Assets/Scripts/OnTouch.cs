@@ -6,24 +6,16 @@ using UnityEngine.SceneManagement;
 
 public class OnTouch : MonoBehaviour
 {
+    //transform for gun to shoot
+
     private Text pickUpText;
     public static bool correctKey = false;
     public static bool incorrectKey = false;
 
-    //Pause GameObject
-    public GameObject pauseMenu;
-    public GameObject resume;
-    public GameObject mainMenu;
 
     public string sceneName;
     public bool isPaused;
     public bool useless;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
 
     // Update is called once per frame
     void Update()
@@ -48,36 +40,20 @@ public class OnTouch : MonoBehaviour
                 if (hit.collider && hit.collider.tag == "CorrectText")
                 {
                     Text QuestText = GameObject.Find("Canvas/Quest").GetComponent<Text>();
-                    QuestText.text = "print(\"Hello, World\")";
+                    QuestText.text = "<color=green>print</color>(\"Hello, World\")";
                     correctKey = true;
                     incorrectKey = false;
                 }
                 else if (hit.collider && hit.collider.tag == "IncorrectText")
                 {
                     Text QuestText = GameObject.Find("Canvas/Quest").GetComponent<Text>();
-                    QuestText.text = "Print(\"Hello, World\")";
+                    QuestText.text = "<color=green>Print</color>(\"Hello, World\")";
                     correctKey = false;
                     incorrectKey = true;
                 }
             }
-            /*if (hit.collider && hit.collider.tag == "Pause")
-            {
-                MenuController.isPaused = true;
-                pauseMenu.SetActive(true);
-                Time.timeScale = 0f;
-            }*/
-            /*if (hit.collider && hit.collider.tag == "Resume")
-            {
-                MenuController.isPaused = false;
-                pauseMenu.SetActive(false);
-                Time.timeScale = 1f;
-            }
-            if (hit.collider && hit.collider.tag == "MainMenu")
-            {
-                MenuController.isPaused = true;
-                pauseMenu.SetActive(true);
-                Time.timeScale = 0f;
-            }*/
+
+
         }
     }
 }

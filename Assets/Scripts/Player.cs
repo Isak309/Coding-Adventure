@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public Transform gun;
     //create characters rigidbody
     private Rigidbody2D rigidbody2d;
     private float move;
@@ -65,10 +66,9 @@ public class Player : MonoBehaviour
         facingRight = !facingRight;
         //get the local scale
         Vector3 theScale = transform.localScale;
-        //flip on x axis
         theScale.x *= -1;
-        //apply that to the local scale
         transform.localScale = theScale;
+        gun.transform.Rotate(0f, 180f, 0f);
     }
     public void Move()
     {
