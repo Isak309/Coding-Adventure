@@ -4,20 +4,17 @@ using UnityEngine;
 
 public class Grounded : MonoBehaviour
 {
-    public Player player;
-    // Start is called before the first frame update
-    void Start()
+    public static bool grounded;
+    public Transform rayStart, rayEnd;
+    void Update()
     {
-        player = gameObject.GetComponent<Player>();
+        Raycasting();
     }
 
-    public void OnTriggerEnter2D(Collider2D collision)
+    void Raycasting()
     {
-        player.isGrounded = true;
-    }
-
-    public void OnTriggerExit2D(Collider2D collision)
-    {
-        player.isGrounded = false;
+        //Debug.DrawLine(rayStart.position, rayEnd.position, Color.green);
+        grounded = Physics2D.Linecast(rayStart.position, rayEnd.position, 1 << LayerMask.NameToLayer("Floor"));
+        //Debug.Log(grounded);
     }
 }

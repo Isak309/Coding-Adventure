@@ -13,11 +13,11 @@ public class TextForUI : MonoBehaviour
         QuestText.text = "~~~~(\"Hello, World\")";
 
         //generate text for instructions
-        Text instructionsText = GameObject.Find("Canvas/Instructions").GetComponent<Text>();
-        instructionsText.text = "Complete the python code " +
-            "\nunder the wavy lines!";
+        //Text instructionsText = GameObject.Find("Canvas/Instructions").GetComponent<Text>();
+        //instructionsText.text = "Complete the python code " +
+        //    "\nin place of the wavy lines!";
 
         //remove Instructions after 3 seconds
-        Destroy(GameObject.Find("Canvas/Instructions").GetComponent<Text>(), 3f);
+        //Destroy(GameObject.Find("Canvas/Instructions").GetComponent<Text>(), 3f);
     }
 }

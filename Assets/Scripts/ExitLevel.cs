@@ -8,8 +8,8 @@ public class ExitLevel : MonoBehaviour
 {
     [SerializeField]
     private Text exitText;
+    private Text incorrectText;
     private bool exitAllowed;
-
     public string LevelToLoad;
 
     // Start is called before the first frame update
@@ -21,9 +21,38 @@ public class ExitLevel : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if (exitAllowed && Input.GetButtonDown("Interact") && Key.correctKey == true)
+        if (exitAllowed && OnTouch.correctKey == true)
         {
-            SceneManager.LoadScene(LevelToLoad);
+
+            foreach (Touch touch in Input.touches)
+            {
+                Vector2 test = Camera.main.ScreenToWorldPoint(touch.position);
+                RaycastHit2D hit = Physics2D.Raycast(test, (touch.position));
+                if (touch.position.x < Screen.width && touch.position.y < Screen.height)
+                {
+                    if (hit.collider && hit.collider.tag == "Exit")
+                    {
+                        SceneManager.LoadScene(LevelToLoad);
+
+                    }
+                }
+            }
+        }
+        else if (exitAllowed && OnTouch.incorrectKey == true)
+        {
+
+            foreach (Touch touch in Input.touches)
+            {
+                Vector2 test = Camera.main.ScreenToWorldPoint(touch.position);
+                RaycastHit2D hit = Physics2D.Raycast(test, (touch.position));
+                if (touch.position.x < Screen.width && touch.position.y < Screen.height)
+                {
+                    if (hit.collider && hit.collider.tag == "Exit")
+                    {
+                        incorrectText.gameObject.SetActive(true);
+                    }
+                }
+            }
         }
     }
 
