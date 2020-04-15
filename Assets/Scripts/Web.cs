@@ -8,7 +8,9 @@ public class Web : MonoBehaviour
     void Start()
     {
         // A correct website page.
-        StartCoroutine(GetRequest("http://localhost/codingAdventure/GetDate.php"));
+        //StartCoroutine(GetRequest("http://localhost/codingAdventure/GetDate.php"));
+        //StartCoroutine(Login("Sarah.Kizer", "Password1"));
+        //StartCoroutine(RegisterUser("tester.try@email.com", "tester.try", "testertry"));
 
         // A non-existing page.
         //StartCoroutine(GetRequest("https://error.html"));
@@ -31,6 +33,49 @@ public class Web : MonoBehaviour
             else
             {
                 Debug.Log(pages[page] + ":\nReceived: " + webRequest.downloadHandler.text);
+            }
+        }
+    }
+
+    public IEnumerator Login(string username, string password)
+    {
+        WWWForm form = new WWWForm();
+        form.AddField("loginUser", username);
+        form.AddField("loginPassword", password);
+
+        using (UnityWebRequest www = UnityWebRequest.Post("http://localhost/codingAdventure/Login.php", form))
+        {
+            yield return www.SendWebRequest();
+
+            if (www.isNetworkError || www.isHttpError)
+            {
+                Debug.Log(www.error);
+            }
+            else
+            {
+                Debug.Log(www.downloadHandler.text);
+            }
+        }
+    }
+
+    public IEnumerator RegisterUser(string email, string username, string password)
+    {
+        WWWForm form = new WWWForm();
+        form.AddField("loginEmail", email);
+        form.AddField("loginUser", username);
+        form.AddField("loginPassword", password);
+
+        using (UnityWebRequest www = UnityWebRequest.Post("http://localhost/codingAdventure/RegisterUser.php", form))
+        {
+            yield return www.SendWebRequest();
+
+            if (www.isNetworkError || www.isHttpError)
+            {
+                Debug.Log(www.error);
+            }
+            else
+            {
+                Debug.Log(www.downloadHandler.text);
             }
         }
     }
