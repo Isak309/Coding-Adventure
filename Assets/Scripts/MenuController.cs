@@ -40,13 +40,7 @@ public class MenuController : MonoBehaviour
                         isPaused = true;
                         Time.timeScale = 0f;
                     }
-                    //Unpause using same pause button. Unpauses too quick though
-                    /*else if (hit.transform.name == "Pause" && pauseMenu.activeInHierarchy)
-                    {
-                        pauseMenu.SetActive(false);
-                        isPaused = false;
-                        Time.timeScale = 1f;
-                    }*/
+
                 }
             }
         }
