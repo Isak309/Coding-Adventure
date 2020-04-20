@@ -92,6 +92,54 @@ public class OnTouch : MonoBehaviour
                     correctKey = false; //cant exit anymore
                     incorrectKey = true;
                 }
+
+                //Level 2
+                if (hit.collider.name == "CorrectAnswer2")
+                {
+                    TextMeshPro CorrectAnswer = GameObject.Find("CorrectAnswer2").GetComponent<TextMeshPro>();
+                    TextMeshPro IncorrectAnswer = GameObject.Find("IncorrectAnswer2").GetComponent<TextMeshPro>();
+                    TextMeshPro IncorrectAnswerExtra = GameObject.Find("IncorrectAnswerExtra").GetComponent<TextMeshPro>();
+
+                    CorrectAnswer.text = ("<color=white>python helloworld.py</color>");//white text
+                    IncorrectAnswer.text = ("open helloworld.py");//black text
+                    IncorrectAnswerExtra.text = ("run helloworld.py");//black text
+
+                    //Question.text = ("<color=white>print</color>(\"Hello World\")");
+
+                    correctKey = true; //can now exit
+                    incorrectKey = false;
+                }
+                if (hit.collider.name == "IncorrectAnswer2")
+                {
+                    TextMeshPro CorrectAnswer = GameObject.Find("CorrectAnswer2").GetComponent<TextMeshPro>(); 
+                    TextMeshPro IncorrectAnswer = GameObject.Find("IncorrectAnswer2").GetComponent<TextMeshPro>();
+                    TextMeshPro IncorrectAnswerExtra = GameObject.Find("IncorrectAnswerExtra").GetComponent<TextMeshPro>();
+
+                    CorrectAnswer.text = ("python helloworld.py");//black text
+                    IncorrectAnswer.text = ("<color=white>open helloworld.py</color>");//white text
+                    IncorrectAnswerExtra.text = ("run helloworld.py");//black text
+
+                    //Question.text = ("<color=white>Print</color>(\"Hello World\")");
+
+                    correctKey = false; //cant exit anymore
+                    incorrectKey = true;
+                }
+                if (hit.collider.name == "IncorrectAnswerExtra")
+                {
+                    TextMeshPro CorrectAnswer = GameObject.Find("CorrectAnswer2").GetComponent<TextMeshPro>(); 
+                    TextMeshPro IncorrectAnswer = GameObject.Find("IncorrectAnswer2").GetComponent<TextMeshPro>();
+                    TextMeshPro IncorrectAnswerExtra = GameObject.Find("IncorrectAnswerExtra").GetComponent<TextMeshPro>();
+
+
+                    CorrectAnswer.text = ("python helloworld.py");//black text
+                    IncorrectAnswer.text = ("open helloworld.py");//black text
+                    IncorrectAnswerExtra.text = ("<color=white>run helloworld.py</color>");//white text
+
+                    //Question.text = ("<color=white>Print</color>(\"Hello World\")");
+
+                    correctKey = false; //cant exit anymore
+                    incorrectKey = true;
+                }
             }
         }
     }

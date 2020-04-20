@@ -12,9 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Play1.unity
     guid: 24e6df9168eca494ea278a15d1055cb3
   - enabled: 1
-    path: Assets/Scenes/Play1End.unity
-    guid: e455a17c920664d4fab692b2fd31e0d7
-  - enabled: 1
     path: Assets/Scenes/Play2.unity
     guid: e6dbeb3eaae56e64ab5b5e24406dca00
   - enabled: 1
