@@ -11,6 +11,7 @@ public class ExitLevel : MonoBehaviour
     private Text incorrectText;
     private bool exitAllowed;
     public string LevelToLoad;
+    public static bool confetti = false;
 
     // Start is called before the first frame update
     void Start()
@@ -18,6 +19,12 @@ public class ExitLevel : MonoBehaviour
         exitText.gameObject.SetActive(false);
     }
 
+    private IEnumerator WaitForSceneLoad()
+    {
+        yield return new WaitForSeconds(5);
+        SceneManager.LoadScene(LevelToLoad);
+
+    }
     // Update is called once per frame
     private void Update()
     {
@@ -32,8 +39,8 @@ public class ExitLevel : MonoBehaviour
                 {
                     if (hit.collider && hit.collider.tag == "Exit")
                     {
-                        SceneManager.LoadScene(LevelToLoad);
-
+                        StartCoroutine(WaitForSceneLoad());
+                        confetti = true;
                     }
                 }
             }

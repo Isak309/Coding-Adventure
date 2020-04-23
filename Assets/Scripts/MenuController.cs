@@ -9,6 +9,7 @@ public class MenuController : MonoBehaviour
 {
     public string sceneName;
     public GameObject pauseMenu;
+    public GameObject resumeButton;
     public Canvas pauseButton;
     public static bool isPaused;
 
@@ -31,17 +32,23 @@ public class MenuController : MonoBehaviour
             {
                 Vector2 test = Camera.main.ScreenToWorldPoint(touch.position);
                 RaycastHit2D hit = Physics2D.Raycast(test, (touch.position));
-                if (hit)
+                /*if (hit)
                 {
                     Debug.Log(hit.transform.name);
-                    if (hit.transform.name == "Pause" && !pauseMenu.activeInHierarchy)
+                    if (hit.transform.name == "Pause")
                     {
-                        pauseMenu.SetActive(true);
+                        //pauseMenu.SetActive(true);
+                        resumeButton.SetActive(true);
                         isPaused = true;
-                        Time.timeScale = 0f;
                     }
-
-                }
+                    if (hit.transform.name == "Resume")
+                    {
+                        //pauseMenu.SetActive(false);
+                        resumeButton.SetActive(false);
+                        isPaused = false;
+                        Time.timeScale = 1f;
+                    }
+                }*/
             }
         }
     }
