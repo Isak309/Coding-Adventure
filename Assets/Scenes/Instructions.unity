@@ -239,8 +239,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 126, y: -135.05}
-  m_SizeDelta: {x: 135, y: 25}
+  m_AnchoredPosition: {x: 127, y: -140}
+  m_SizeDelta: {x: 130, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &181781925
 MonoBehaviour:
@@ -294,7 +294,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: GUI
+          m_StringArgument: Homescreen
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &181781926
@@ -539,8 +539,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.7000122, y: -9.399994}
-  m_SizeDelta: {x: -220, y: -154.7}
+  m_AnchoredPosition: {x: 0, y: -23}
+  m_SizeDelta: {x: -213.28558, y: -186.92949}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &542858606
 MonoBehaviour:
@@ -951,8 +951,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 5.925, y: -272.2}
-  m_SizeDelta: {x: 312.15, y: 715.5}
+  m_AnchoredPosition: {x: 5.925, y: -92.7}
+  m_SizeDelta: {x: 312.15, y: 356.1955}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &879892178
 MonoBehaviour:
@@ -1000,14 +1000,17 @@ MonoBehaviour:
     complete the line of code.
 
 
-    2. To collect coins, simply run to the coin
-    and hover over it
+    2. To successfully complete a level, pick up
+    the correct code segment and proceed to the door. If you picked the correct code
+    segment, you will unlock and proceed to the next level.
 
 
-    3. Use the coins you collect to visit the Coding Adventure
-    Store to buy different skins and hats
+    3. To collect coins,
+    simply run to the coin and hover over it.
 
-'
+
+    4. Use the coins you collect
+    by visiting the Coding Adventure Store to buy different skins and hats.'
 --- !u!222 &879892179
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1154,8 +1157,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 172, y: 0.00000011921}
-  m_SizeDelta: {x: 20, y: 184.5}
+  m_AnchoredPosition: {x: 172, y: 6.7}
+  m_SizeDelta: {x: 20, y: 197.92896}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1052297690
 MonoBehaviour:
@@ -1199,8 +1202,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1702288649}
   m_HandleRect: {fileID: 1702288648}
   m_Direction: 2
-  m_Value: 0.94066703
-  m_Size: 0.13668765
+  m_Value: 0.8587523
+  m_Size: 0.27456832
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
