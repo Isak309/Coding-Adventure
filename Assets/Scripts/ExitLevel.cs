@@ -22,6 +22,7 @@ public class ExitLevel : MonoBehaviour
     private IEnumerator WaitForSceneLoad()
     {
         yield return new WaitForSeconds(5);
+        confetti = false;
         SceneManager.LoadScene(LevelToLoad);
 
     }
@@ -39,8 +40,9 @@ public class ExitLevel : MonoBehaviour
                 {
                     if (hit.collider && hit.collider.tag == "Exit")
                     {
-                        StartCoroutine(WaitForSceneLoad());
                         confetti = true;
+                        StartCoroutine(WaitForSceneLoad());
+
                     }
                 }
             }
