@@ -42,6 +42,8 @@ public class OnTouch : MonoBehaviour
                 //Level 0
                 if(hit.collider.name == "CorrectAnswer0")
                 {
+                    Debug.Log("Right");
+
                     TextMeshPro CorrectAnswer = GameObject.Find("CorrectAnswer0").GetComponent<TextMeshPro>();//Set value to green text
                     TextMeshPro IncorrectAnswer = GameObject.Find("IncorrectAnswer0").GetComponent<TextMeshPro>();//Reset value to black text
 
@@ -55,6 +57,7 @@ public class OnTouch : MonoBehaviour
                 }
                 if (hit.collider.name == "IncorrectAnswer0")
                 {
+                    Debug.Log("Incorrect");
                     TextMeshPro CorrectAnswer = GameObject.Find("CorrectAnswer0").GetComponent<TextMeshPro>(); //Reset value to black text
                     TextMeshPro IncorrectAnswer = GameObject.Find("IncorrectAnswer0").GetComponent<TextMeshPro>();//Set value to green text
 

@@ -23,6 +23,7 @@ public class ExitLevel : MonoBehaviour
     {
         yield return new WaitForSeconds(5);
         confetti = false;
+        exitAllowed = false;
         SceneManager.LoadScene(LevelToLoad);
 
     }

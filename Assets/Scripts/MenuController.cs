@@ -32,23 +32,22 @@ public class MenuController : MonoBehaviour
             {
                 Vector2 test = Camera.main.ScreenToWorldPoint(touch.position);
                 RaycastHit2D hit = Physics2D.Raycast(test, (touch.position));
-                /*if (hit)
+                if (hit)
                 {
                     Debug.Log(hit.transform.name);
                     if (hit.transform.name == "Pause")
                     {
-                        //pauseMenu.SetActive(true);
-                        resumeButton.SetActive(true);
+                        pauseMenu.SetActive(true);
                         isPaused = true;
+                        Time.timeScale = 0f;
                     }
                     if (hit.transform.name == "Resume")
                     {
-                        //pauseMenu.SetActive(false);
-                        resumeButton.SetActive(false);
+                        pauseMenu.SetActive(false);
                         isPaused = false;
                         Time.timeScale = 1f;
                     }
-                }*/
+                }
             }
         }
     }
