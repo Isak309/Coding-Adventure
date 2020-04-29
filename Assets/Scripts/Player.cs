@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public Transform gun;
     //create characters rigidbody
     private Rigidbody2D rigidbody2d;
     private float move;
@@ -67,6 +68,7 @@ public class Player : MonoBehaviour
         Vector3 theScale = transform.localScale;
         theScale.x *= -1;
         transform.localScale = theScale;
+        gun.transform.Rotate(0f, 180f, 0f);
     }
     public void Move()
     {
@@ -93,13 +95,13 @@ public class Player : MonoBehaviour
         {
             if (canDoubleJump && Input.GetButtonDown("Jump"))
             {
-                rigidbody2d.velocity = Vector2.up * jumpVelocity2;
+                rigidbody2d.velocity = Vector2.up * jumpVelocity2 * Time.deltaTime;
                 canDoubleJump = false;
             }
         }
         if(rigidbody2d.velocity.y < 0)
         {
-            rigidbody2d.velocity += Vector2.up * Physics2D.gravity.y * fallMultiplyers;
+            rigidbody2d.velocity += Vector2.up * Physics2D.gravity.y * fallMultiplyers * Time.deltaTime;
         }
     }
 }
